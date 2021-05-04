@@ -12,12 +12,26 @@
 
 html {
     font-family: var(--font);
+    font-size: 20px;
     /* background-color: pink; */
+    /* font-weight: 300; */
 }
+
+.is-hidden {
+    display: none;
+}
+
+.carousel__main-wrapper {
+    position: relative;
+}
+
 
 .carousel__container {
-
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
 
 .carousel__image-container {
     background-image: url(../images/pattern-bg.svg);
@@ -29,7 +43,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 350px;
     width: auto;
     position: relative;
 
@@ -64,6 +78,37 @@ html {
     grid-template-columns: 1fr 1fr;
     place-items: center;
     position: absolute;
-    bottom: 6px;
-    left: 150px;
+    bottom: 2px;
+    left: 130px;
+}
+
+.carousel__button {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.carousel__button-container img {
+    height: 15px;
+    width: 13px;
+}
+
+p {
+    font-weight: 300;
+}
+
+strong {
+    display: block;
+    margin-top: 1rem;
+}
+
+
+.carousel__details-container {
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 90px;
+    background-position: 50% 0;
+    text-align: center;
+    padding: 2rem;
 }
