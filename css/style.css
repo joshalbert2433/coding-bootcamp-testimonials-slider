@@ -13,32 +13,16 @@
 html {
     font-family: var(--font);
     font-size: 20px;
-    /* background-color: pink; */
-    /* font-weight: 300; */
 }
 
 .is-hidden {
     display: none;
 }
 
-.carousel__main-wrapper {
-    position: relative;
-}
-
-
-.carousel__container {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
 .carousel__image-container {
     background-image: url(../images/pattern-bg.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* width: 80%; */
-    /* margin: 0 auto; */
     margin: 2rem;
     display: flex;
     justify-content: center;
@@ -53,8 +37,6 @@ html {
     height: 85%;
     width: 77%;
     border-radius: 10px;
-    /* box-shadow: 10px 20px 20px 0 rgba(0,0,0,.2); */
-    /* object-fit: cover; */
 }
 
 .carousel__image-container::before {
@@ -62,7 +44,7 @@ html {
     position: absolute;
     bottom: 30px;
     left: 70px;
-    width: 200px;
+    width: 100px;
     height: 100px;
     z-index: -1;
     box-shadow: 0 20px 40px 0 rgba(0,0,0, .3);
@@ -79,7 +61,7 @@ html {
     place-items: center;
     position: absolute;
     bottom: 2px;
-    left: 130px;
+    left: 60px;
 }
 
 .carousel__button {
@@ -111,4 +93,83 @@ strong {
     background-position: 50% 0;
     text-align: center;
     padding: 2rem;
+}
+
+@media (min-width:500px){
+    
+    html, body{
+        height: 100%;
+    }
+
+    html {
+        font-size: 32px;
+
+    }
+
+    body {
+        position:relative;
+    }
+
+    .carousel__main-wrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .carousel__container {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "details image";
+        place-items: center;
+        position: re;
+    }
+    
+
+    .carousel__image-container {grid-area: image;}
+    .carousel__details-container {grid-area: details;}
+
+    .carousel__details-container {
+        text-align: left;
+        transform: translateX(300px);
+    }
+
+    .carousel__image-container {
+        height: 700px;
+        width: 800px;
+    }
+
+    .carousel__image-container::before {
+        bottom: 60px;
+        left: 120px;
+        width: 360px;
+    }
+
+    .carousel__button-container {
+        bottom: 32px;
+        left: 180px;
+    }
+
+    .carousel__button-container > * {
+        transform: translateY(-3px);
+    }
+
+    .carousel__details-container p {
+        line-height: 1.5;
+    }
+
+    strong, small {
+        font-size: .7rem;
+    }  
+
+    strong {
+        display: inline-block;
+        margin-top: 2rem;
+    }
+
+    small {
+        display: inline-block;
+        opacity: .4;
+    }
 }
